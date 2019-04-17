@@ -89,7 +89,7 @@ public class Employee {
 		this.createdOn = createdOn;
 		return this;
 	}
-	
+
 	public Employee() {
 		this.active = false;
 		this.id = new UUID(0, 0);
