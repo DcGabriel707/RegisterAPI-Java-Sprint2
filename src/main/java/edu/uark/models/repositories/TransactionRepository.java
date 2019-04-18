@@ -1,19 +1,19 @@
-//package edu.uark.models.repositories;
-//
-//import edu.uark.dataaccess.repository.BaseRepository;
-//import edu.uark.dataaccess.repository.helpers.PostgreFunctionType;
-//import edu.uark.dataaccess.repository.helpers.SQLComparisonType;
-//import edu.uark.dataaccess.repository.helpers.where.WhereClause;
-//import edu.uark.dataaccess.repository.helpers.where.WhereContainer;
-//import edu.uark.models.entities.ProductEntity;
-//import edu.uark.models.entities.fieldnames.ProductFieldNames;
-//import edu.uark.models.repositories.interfaces.ProductRepositoryInterface;
-//
-//import java.sql.SQLException;
-//
-//
-//
-//public class TransactionRepository extends BaseRepository<TransactionEntity> implements TransactionRepositoryInterface {
+package edu.uark.models.repositories;
+
+import edu.uark.dataaccess.repository.BaseRepository;
+import edu.uark.dataaccess.repository.DatabaseTable;
+import edu.uark.dataaccess.repository.helpers.PostgreFunctionType;
+import edu.uark.dataaccess.repository.helpers.SQLComparisonType;
+import edu.uark.dataaccess.repository.helpers.where.WhereClause;
+import edu.uark.dataaccess.repository.helpers.where.WhereContainer;
+import edu.uark.models.entities.ProductEntity;
+import edu.uark.models.entities.TransactionEntity;
+import edu.uark.models.entities.fieldnames.TransactionFieldNames;
+import edu.uark.models.repositories.interfaces.TransactionRepositoryInterface;
+
+import java.sql.SQLException;
+
+public class TransactionRepository extends BaseRepository<TransactionEntity> implements TransactionRepositoryInterface {
 //    @Override
 //    public TransactionEntity byLookupCode(String lookupCode) {
 //        return this.firstOrDefaultWhere(
@@ -33,3 +33,12 @@
 //                }
 //        );
 //    }
+	@Override
+	public TransactionEntity createOne() {
+		return new TransactionEntity();
+	}
+	
+	public TransactionRepository() {
+		super(DatabaseTable.TRANSACTION);
+	}
+}

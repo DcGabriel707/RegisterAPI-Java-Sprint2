@@ -28,7 +28,7 @@ import java.util.UUID;
 public class TransactionRestController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public List<Transaction> getProducts() {
+	public List<Transaction> getTransaction() {
 		return (new TransactionQuery()).execute();
 	}
 
@@ -39,9 +39,9 @@ public class TransactionRestController {
 	}
 	
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public Transaction createTransaction(@RequestBody Product product) {
+	public Transaction createTransaction(@RequestBody Transaction transaction) {
 		return (new TransactionCreateCommand()).
-			setApiTransaction(product).
+			setApiTransaction(transaction).
 			execute();
 	}
 	

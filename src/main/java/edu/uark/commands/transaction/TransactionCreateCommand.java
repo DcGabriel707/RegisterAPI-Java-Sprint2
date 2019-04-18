@@ -6,6 +6,7 @@ import edu.uark.commands.ResultCommandInterface;
 import edu.uark.controllers.exceptions.ConflictException;
 import edu.uark.controllers.exceptions.UnprocessableEntityException;
 import edu.uark.models.api.Transaction;
+import edu.uark.models.api.Product;
 import edu.uark.models.entities.TransactionEntity;
 import edu.uark.models.repositories.TransactionRepository;
 import edu.uark.models.repositories.interfaces.TransactionRepositoryInterface;
@@ -14,9 +15,9 @@ public class TransactionCreateCommand implements ResultCommandInterface<Transact
 	@Override
 	public Transaction execute() {
 		//Validations
-		if (StringUtils.isBlank(this.apiTransaction.getLookupCode())) {
-			throw new UnprocessableEntityException("lookupcode");
-		}
+//		if (StringUtils.isBlank(this.apiTransaction.getLookupCode())) {
+//			throw new UnprocessableEntityException("lookupcode");
+//		}
 
 		TransactionEntity transactionEntity = this.transactionRepository.byLookupCode(this.apiTransaction.getLookupCode());
 		if (transactionEntity != null) {
@@ -38,7 +39,7 @@ public class TransactionCreateCommand implements ResultCommandInterface<Transact
 	public Transaction getApiTransaction() {
 		return this.apiTransaction;
 	}
-	public TransactionCreateCommand setApiTransaction(Product apiTransaction) {
+	public TransactionCreateCommand setApiTransaction(Transaction apiTransaction) {
 		this.apiTransaction = apiTransaction;
 		return this;
 	}
