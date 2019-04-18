@@ -23,7 +23,7 @@ public class Product {
 		this.lookupCode = lookupCode;
 		return this;
 	}
-	
+
 	private int count;
 	public int getCount() {
 		return this.count;
@@ -32,7 +32,14 @@ public class Product {
 		this.count = count;
 		return this;
 	}
-	
+
+	private float price;
+	public float getPrice() { return this.price; }
+	public Product setPrice(float price) {
+		this.price = price;
+		return this;
+	}
+
 	private LocalDateTime createdOn;
 	public LocalDateTime getCreatedOn() {
 		return this.createdOn;
@@ -54,5 +61,6 @@ public class Product {
 		this.count = productEntity.getCount();
 		this.createdOn = productEntity.getCreatedOn();
 		this.lookupCode = productEntity.getLookupCode();
+		this.price = productEntity.getPrice();
 	}
 }
