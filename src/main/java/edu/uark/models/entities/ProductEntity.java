@@ -51,7 +51,18 @@ public class ProductEntity extends BaseEntity<ProductEntity> {
 		
 		return this;
 	}
-	
+
+	private float price;
+	public float getPrice() {return this.price; }
+	public ProductEntity setPrice(float price) {
+		if (this.price != price) {
+			this.price = price;
+			this.propertyChanged(ProductFieldNames.PRICE);
+		}
+
+		return this;
+	}
+
 	public Product synchronize(Product apiProduct) {
 		this.setCount(apiProduct.getCount());
 		this.setLookupCode(apiProduct.getLookupCode());
