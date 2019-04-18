@@ -1,5 +1,8 @@
 package edu.uark.models.repositories.interfaces;
 
-public class TransactionRepositoryInterface {
+import edu.uark.dataaccess.repository.BaseRepositoryInterface;
+import edu.uark.models.entities.TransactionEntity;
 
-}
+public interface TransactionRepositoryInterface extends BaseRepositoryInterface<TransactionEntity> {
+//			TransactionEntity byLookupCode(String lookupCode);
+		}
