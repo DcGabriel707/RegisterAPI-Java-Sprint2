@@ -52,9 +52,9 @@ public class ProductEntity extends BaseEntity<ProductEntity> {
 		return this;
 	}
 
-	private float price;
-	public float getPrice() {return this.price; }
-	public ProductEntity setPrice(float price) {
+	private double price;
+	public double getPrice() {return this.price; }
+	public ProductEntity setPrice(double price) {
 		if (this.price != price) {
 			this.price = price;
 			this.propertyChanged(ProductFieldNames.PRICE);
@@ -66,6 +66,7 @@ public class ProductEntity extends BaseEntity<ProductEntity> {
 	public Product synchronize(Product apiProduct) {
 		this.setCount(apiProduct.getCount());
 		this.setLookupCode(apiProduct.getLookupCode());
+		this.setPrice(apiProduct.getPrice()); // apr-17 kt
 		
 		apiProduct.setId(this.getId());
 		apiProduct.setCreatedOn(this.getCreatedOn());
@@ -84,6 +85,7 @@ public class ProductEntity extends BaseEntity<ProductEntity> {
 		super(DatabaseTable.PRODUCT);
 		
 		this.count = apiProduct.getCount();
+		this.price = apiProduct.getPrice();
 		this.lookupCode = apiProduct.getLookupCode();
 	}
 }

@@ -33,9 +33,9 @@ public class Product {
 		return this;
 	}
 
-	private float price;
-	public float getPrice() { return this.price; }
-	public Product setPrice(float price) {
+	private double price;
+	public double getPrice() { return this.price; }
+	public Product setPrice(double price) {
 		this.price = price;
 		return this;
 	}
@@ -54,6 +54,7 @@ public class Product {
 		this.lookupCode = "";
 		this.id = new UUID(0, 0);
 		this.createdOn = LocalDateTime.now();
+		this.price = 0.0;
 	}
 	
 	public Product(ProductEntity productEntity) {
