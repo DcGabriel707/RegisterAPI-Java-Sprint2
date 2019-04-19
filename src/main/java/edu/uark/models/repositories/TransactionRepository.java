@@ -14,14 +14,14 @@ import edu.uark.models.repositories.interfaces.TransactionRepositoryInterface;
 import java.sql.SQLException;
 
 public class TransactionRepository extends BaseRepository<TransactionEntity> implements TransactionRepositoryInterface {
-//    @Override
+ //   @Override
 //    public TransactionEntity byLookupCode(String lookupCode) {
 //        return this.firstOrDefaultWhere(
 //                new WhereContainer(
 //                        (new WhereClause()).
 //                                postgreFunction(PostgreFunctionType.LOWER).
 //                                table(this.primaryTable).
-//                                fieldName(ProductFieldNames.LOOKUP_CODE).
+//                                fieldName(TransactionFieldNames.LOOKUP_CODE).
 //                                comparison(SQLComparisonType.EQUALS)
 //                ),
 //                (ps) -> {
