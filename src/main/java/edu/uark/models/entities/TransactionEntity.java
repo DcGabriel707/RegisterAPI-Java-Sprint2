@@ -20,7 +20,7 @@ import edu.uark.models.entities.fieldnames.TransactionFieldNames;
 public class TransactionEntity extends BaseEntity<TransactionEntity> {
 	@Override
 	protected void fillFromRecord(ResultSet rs) throws SQLException {
-		this.recordId = ((UUID) rs.getObject(TransactionFieldNames.RECORD_ID));
+		//this.recordId = ((UUID) rs.getObject(TransactionFieldNames.RECORD_ID));
 		this.cashierId = rs.getInt(TransactionFieldNames.CASHIER_ID);
 		this.total = rs.getInt(TransactionFieldNames.TOTAL_AMOUNT);
 		//this.transactionType = rs.getString(TransactionFieldNames.TRANSACTION_TYPE);
@@ -30,7 +30,7 @@ public class TransactionEntity extends BaseEntity<TransactionEntity> {
 	
 	@Override
 	protected Map<String, Object> fillRecord(Map<String, Object> record) {
-		record.put(TransactionFieldNames.RECORD_ID, this.recordId);
+		//record.put(TransactionFieldNames.RECORD_ID, this.recordId);
 		record.put(TransactionFieldNames.CASHIER_ID, this.cashierId);
 		record.put(TransactionFieldNames.TOTAL_AMOUNT, this.total);
 		//record.put(TransactionFieldNames.TRANSACTION_TYPE, this.transactionType);
@@ -39,7 +39,7 @@ public class TransactionEntity extends BaseEntity<TransactionEntity> {
 
 		return record;
 	}
-	
+	/*
 	private UUID recordId;
 	public UUID getRecordId() {
 		return this.recordId;
@@ -52,7 +52,7 @@ public class TransactionEntity extends BaseEntity<TransactionEntity> {
 		
 		return this;
 	}	
-	
+	*/
 	private int cashierId;
 	public int getCashierId() {
 		return this.cashierId;
@@ -105,7 +105,7 @@ public class TransactionEntity extends BaseEntity<TransactionEntity> {
 	
 	
 	public Transaction synchronize(Transaction apiTransaction) {
-		this.setRecordId(apiTransaction.getRecordId());
+	//	this.setRecordId(apiTransaction.getRecordId());
 		this.setCashierId(apiTransaction.getCashierId());
 		this.setTotal(apiTransaction.getTotal());
 		//this.setTransactionType()
@@ -121,7 +121,7 @@ public class TransactionEntity extends BaseEntity<TransactionEntity> {
 	public TransactionEntity() {
 		super(DatabaseTable.TRANSACTION);
 
-		this.recordId = new UUID(0, 0);
+	//	this.recordId = new UUID(0, 0);
 		this.cashierId = 0;
 		this.total = 0;
 		this.referenceId = new UUID(0, 0);
@@ -131,7 +131,7 @@ public class TransactionEntity extends BaseEntity<TransactionEntity> {
 	public TransactionEntity(Transaction apiTransaction) {
 		super(DatabaseTable.TRANSACTION);
 		
-		this.recordId = apiTransaction.getRecordId();
+	//	this.recordId = apiTransaction.getRecordId();
 		this.cashierId = apiTransaction.getCashierId();
 		this.total = apiTransaction.getTotal();
 		this.referenceId = apiTransaction.getReferenceId();

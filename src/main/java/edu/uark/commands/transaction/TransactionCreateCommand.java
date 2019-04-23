@@ -27,7 +27,7 @@ public class TransactionCreateCommand implements ResultCommandInterface<Transact
 		transactionEntity.save(); //Write, via an INSERT, the new record to the database.
 		
 		this.apiTransaction.setCreatedOn(transactionEntity.getCreatedOn());
-		this.apiTransaction.setRecordId(transactionEntity.getRecordId());
+		this.apiTransaction.setId(transactionEntity.getId());
 		this.apiTransaction.setCashierId(transactionEntity.getCashierId());
 		this.apiTransaction.setTotal(transactionEntity.getTotal());
 		this.apiTransaction.setReferenceId(transactionEntity.getReferenceId());
