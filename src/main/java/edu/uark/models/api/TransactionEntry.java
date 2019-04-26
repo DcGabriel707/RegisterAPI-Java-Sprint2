@@ -52,7 +52,16 @@ public class TransactionEntry {
 		this.referenceId = referenceId;
 		return this;
 	}
-
+	
+	private LocalDateTime createdOn;
+	public LocalDateTime getCreatedOn() {
+		return this.createdOn;
+	}
+	public TransactionEntry setCreatedOn(LocalDateTime createdOn) {
+		this.createdOn = createdOn;
+		return this;
+	}
+	
 
 	public TransactionEntry() {
 		this.id = new UUID(0, 0);

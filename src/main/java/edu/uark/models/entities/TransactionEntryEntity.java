@@ -87,7 +87,7 @@ public class TransactionEntryEntity extends BaseEntity<TransactionEntryEntity> {
 		this.setReferenceId(apiTransactionEntry.getReferenceId());
 		this.setPrice(apiTransactionEntry.getPrice()); // apr-17 kt
 		//apiTransactionEntry.setId(this.getId());
-		
+		apiTransactionEntry.setCreatedOn(this.getCreatedOn());
 		return apiTransactionEntry;
 	}
 	

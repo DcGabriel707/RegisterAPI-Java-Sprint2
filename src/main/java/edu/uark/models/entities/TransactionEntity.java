@@ -137,11 +137,6 @@ public class TransactionEntity extends BaseEntity<TransactionEntity> {
 		this.referenceId = apiTransaction.getReferenceId();
 		this.totalItemsSold = apiTransaction.getTotalItemsSold();
 
-//		try {
-//			this.recordId = Integer.parseInt(apiTransaction.getRecordId());
-//		} catch (NumberFormatException e) {
-//			this.recordId = -1;
-//		}
 		
 	}
 	
