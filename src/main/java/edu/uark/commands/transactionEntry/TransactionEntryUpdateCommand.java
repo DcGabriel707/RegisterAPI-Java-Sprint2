@@ -1,4 +1,4 @@
-package edu.uark.commands.transactionentry;
+package edu.uark.commands.transactionEntry;
 
 import java.util.UUID;
 
