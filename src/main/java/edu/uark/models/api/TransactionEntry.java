@@ -5,8 +5,6 @@ import edu.uark.models.entities.TransactionEntity;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-//import org.apache.commons.lang3.StringUtils;
-
 
 public class TransactionEntry {
 	//pretty sure this is supposed to be the ID for the product
@@ -59,13 +57,15 @@ public class TransactionEntry {
 	public TransactionEntry() {
 		this.id = new UUID(0, 0);
 		this.quantity = 0;
+		this.price = 0;
 		this.lookupCode = "";
 		this.referenceId = new UUID(0, 0);
 	}
-
+//Please change to transaction entry entity
 	public TransactionEntry(TransactionEntry transactionEntry) {
 		this.id = transactionEntry.getId();
 		this.lookupCode = transactionEntry.getLookupCode();
+		this.price = transactionEntry.getPrice();
 		this.quantity = transactionEntry.getQuantity();
 		this.referenceId = transactionEntry.getReferenceId();
 	}
