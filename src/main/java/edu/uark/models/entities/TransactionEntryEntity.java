@@ -26,6 +26,7 @@ public class TransactionEntryEntity extends BaseEntity<TransactionEntryEntity> {
 		record.put(TransactionEntryFieldNames.LOOKUPCODE, this.lookupCode);
 		record.put(TransactionEntryFieldNames.QUANTITY, this.quantity);
 		record.put(TransactionEntryFieldNames.PRICE, this.price);
+		record.put(TransactionEntryFieldNames.REFERENCE_ID, this.referenceId);
 		
 		return record;
 	}
@@ -94,6 +95,8 @@ public class TransactionEntryEntity extends BaseEntity<TransactionEntryEntity> {
 		super(DatabaseTable.TRANSACTIONENTRY);
 		
 		this.quantity = -1;
+		this.referenceId = new UUID(0, 0);
+		this.price = 0;
 		this.lookupCode = StringUtils.EMPTY;
 	}
 	

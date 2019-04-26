@@ -37,7 +37,7 @@ public class TransactionEntry {
 	public int getQuantity() {
 		return this.quantity;
 	}
-	public TransactionEntry setTotal(int quantity) {
+	public TransactionEntry setQuantity(int quantity) {
 		this.quantity = quantity;
 		return this;
 	}
