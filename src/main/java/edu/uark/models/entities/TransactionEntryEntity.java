@@ -11,7 +11,6 @@ import edu.uark.dataaccess.entities.BaseEntity;
 import edu.uark.dataaccess.repository.DatabaseTable;
 import edu.uark.models.api.TransactionEntry;
 import edu.uark.models.entities.fieldnames.TransactionEntryFieldNames;
-import edu.uark.models.entities.fieldnames.TransactionFieldNames;
 
 public class TransactionEntryEntity extends BaseEntity<TransactionEntryEntity> {
 	@Override
@@ -92,14 +91,14 @@ public class TransactionEntryEntity extends BaseEntity<TransactionEntryEntity> {
 	}
 	
 	public TransactionEntryEntity() {
-		super(DatabaseTable.PRODUCT);
+		super(DatabaseTable.TRANSACTIONENTRY);
 		
 		this.quantity = -1;
 		this.lookupCode = StringUtils.EMPTY;
 	}
 	
 	public TransactionEntryEntity(TransactionEntry apiTransactionEntry) {
-		super(DatabaseTable.PRODUCT);
+		super(DatabaseTable.TRANSACTIONENTRY);
 		
 		this.quantity = apiTransactionEntry.getQuantity();
 		this.price = apiTransactionEntry.getPrice();
