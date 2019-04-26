@@ -9,6 +9,7 @@ import java.util.UUID;
 
 
 public class TransactionEntry {
+	//pretty sure this is supposed to be the ID for the product
 	private UUID id;
 	public UUID getId() {
 		return this.id;
@@ -18,21 +19,28 @@ public class TransactionEntry {
 		return this;
 	}
 
-	private int cashierId;
-	public int getCashierId() {
-		return this.cashierId;
+	private String lookupCode;
+	public String getLookupCode() {
+		return this.lookupCode;
 	}
-	public TransactionEntry setCashierId(int cashierId) {
-		this.cashierId = cashierId;
+	public TransactionEntry setLookupCode(String lookupCode) {
+		this.lookupCode = lookupCode;
 		return this;
 	}
 
-	private int total;
-	public int getTotal() {
-		return this.total;
+	private double price;
+	public double getPrice() { return this.price; }
+	public TransactionEntry setPrice(double price) {
+		this.price = price;
+		return this;
 	}
-	public TransactionEntry setTotal(int total) {
-		this.total = total;
+
+	private int quantity;
+	public int getQuantity() {
+		return this.quantity;
+	}
+	public TransactionEntry setTotal(int quantity) {
+		this.quantity = quantity;
 		return this;
 	}
 
@@ -47,40 +55,19 @@ public class TransactionEntry {
 		return this;
 	}
 
-	private LocalDateTime createdOn;
-	public LocalDateTime getCreatedOn() {
-		return this.createdOn;
-	}
-	public TransactionEntry setCreatedOn(LocalDateTime createdOn) {
-		this.createdOn = createdOn;
-		return this;
-	}
-
-	private int totalItemsSold;
-	public int getTotalItemsSold() {
-		return this.totalItemsSold;
-	}
-	public TransactionEntry setTotalItemsSold(int totalItemsSold) {
-		this.totalItemsSold = totalItemsSold;
-		return this;
-	}
 
 	public TransactionEntry() {
 		this.id = new UUID(0, 0);
-		this.cashierId = 0;
-		this.total = 0;
+		this.quantity = 0;
+		this.lookupCode = "";
 		this.referenceId = new UUID(0, 0);
-		this.createdOn = LocalDateTime.now();
-		this.totalItemsSold = 0;
 	}
 
-	public TransactionEntry(TransactionEntity transactionEntity) {
-		this.id = transactionEntity.getId();
-		this.cashierId = transactionEntity.getCashierId();
-		this.total = transactionEntity.getTotal();
-		this.referenceId = transactionEntity.getReferenceId();
-		this.createdOn = transactionEntity.getCreatedOn();
-		this.totalItemsSold = transactionEntity.getTotalItemsSold();
+	public TransactionEntry(TransactionEntry transactionEntry) {
+		this.id = transactionEntry.getId();
+		this.lookupCode = transactionEntry.getLookupCode();
+		this.quantity = transactionEntry.getQuantity();
+		this.referenceId = transactionEntry.getReferenceId();
 	}
 	
 	
