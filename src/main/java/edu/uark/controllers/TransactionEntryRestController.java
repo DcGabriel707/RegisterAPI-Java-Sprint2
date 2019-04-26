@@ -3,6 +3,9 @@ package edu.uark.controllers;
 import java.util.List;
 import java.util.UUID;
 
+import edu.uark.commands.transactionEntry.TransactionEntryCreateCommand;
+import edu.uark.commands.transactionEntry.TransactionEntryQuery;
+import edu.uark.commands.transactionEntry.TransactionEntryUpdateCommand;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,17 +14,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 //import edu.uark.commands.TransactionEntry.TransactionEntryByLookupCodeQuery;
-import edu.uark.commands.TransactionEntry.TransactionEntryCreateCommand;
+import edu.uark.commands.transactionEntry.TransactionEntryCreateCommand;
 //import edu.uark.commands.TransactionEntry.TransactionEntryDeleteCommand;
-import edu.uark.commands.TransactionEntry.TransactionEntryQuery;
-import edu.uark.commands.TransactionEntry.TransactionEntryUpdateCommand;
+import edu.uark.commands.transactionEntry.TransactionEntryQuery;
+import edu.uark.commands.transactionEntry.TransactionEntryUpdateCommand;
 import edu.uark.models.api.TransactionEntry;
 
 @RestController
 @RequestMapping(value = "/api/transactionentry")
 public class TransactionEntryRestController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public List<Product> getTransactionEntry() {
+	public List<TransactionEntry> getTransactionEntry() {
 		return (new TransactionEntryQuery()).execute();
 	}
 

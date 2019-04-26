@@ -62,7 +62,7 @@ public class TransactionEntry {
 		this.referenceId = new UUID(0, 0);
 	}
 //Please change to transaction entry entity
-	public TransactionEntry(TransactionEntry transactionEntry) {
+	public TransactionEntry(TransactionEntryEntity transactionEntry) {
 		this.id = transactionEntry.getId();
 		this.lookupCode = transactionEntry.getLookupCode();
 		this.price = transactionEntry.getPrice();
