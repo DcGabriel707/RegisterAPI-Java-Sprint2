@@ -1,6 +1,6 @@
 package edu.uark.models.api;
 
-import edu.uark.models.entities.TransactionEntity;
+import edu.uark.models.entities.TransactionEntryEntity;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
