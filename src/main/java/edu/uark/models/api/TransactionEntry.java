@@ -77,6 +77,7 @@ public class TransactionEntry {
 		this.price = transactionEntry.getPrice();
 		this.quantity = transactionEntry.getQuantity();
 		this.referenceId = transactionEntry.getReferenceId();
+		this.createdOn = transactionEntry.getCreatedOn();
 	}
 	
 	
